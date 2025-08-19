@@ -1,0 +1,16 @@
+{{ define "base.tmpl.html" }}
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="utf-8" />
+    <title>Glossary</title>
+    <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css">
+</head>
+<body>
+<main class="container">
+    <h1>Glossary</h1>
+    {{ block "content" . }}{{ end }}
+</main>
+</body>
+</html>
+{{ end }}
