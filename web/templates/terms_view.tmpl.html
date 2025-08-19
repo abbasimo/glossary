@@ -1,0 +1,12 @@
+{{ define "terms_view.tmpl.html" }}
+{{ template "base.tmpl.html" . }}
+{{ end }}
+
+
+{{ define "content" }}
+<h2>{{ .TermEn }}</h2>
+<p>{{ .DefinitionEn }}</p>
+<p><em>{{ .Context }}</em></p>
+<a href="/terms/{{ .ID }}/edit">Edit</a>
+<a href="/terms/">Back to list</a>
+{{ end }}

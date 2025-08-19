@@ -1,0 +1,26 @@
+{{ define "terms_list.tmpl.html" }}
+{{ template "base.tmpl.html" . }}
+{{ end }}
+
+
+{{ define "content" }}
+<h2>Terms</h2>
+<a href="/terms/new">➕ New Term</a>
+<table>
+    <thead><tr><th>ID</th><th>Term</th><th>Actions</th></tr></thead>
+    <tbody>
+    {{ range . }}
+    <tr>
+        <td>{{ .ID }}</td>
+        <td><a href="/terms/{{ .ID }}">{{ .TermEn }}</a></td>
+        <td>
+            <a href="/terms/{{ .ID }}/edit">Edit</a>
+            <form method="post" action="/terms/{{ .ID }}/delete" style="display:inline">
+                <button type="submit">Delete</button>
+            </form>
+        </td>
+    </tr>
+    {{ end }}
+    </tbody>
+</table>
+{{ end }}

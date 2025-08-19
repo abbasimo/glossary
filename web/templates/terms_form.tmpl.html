@@ -1,0 +1,14 @@
+{{ define "terms_form.tmpl.html" }}
+{{ template "base.tmpl.html" . }}
+{{ end }}
+
+
+{{ define "content" }}
+<h2>{{ if . }}Edit Term{{ else }}New Term{{ end }}</h2>
+<form method="post" action="{{ if . }}/terms/{{ .ID }}/update{{ else }}/terms/create{{ end }}">
+    <label>Term EN: <input type="text" name="term_en" value="{{ .TermEn }}"></label><br>
+    <label>Definition EN: <textarea name="definition_en">{{ .DefinitionEn }}</textarea></label><br>
+    <label>Context: <input type="text" name="context" value="{{ .Context }}"></label><br>
+    <button type="submit">Save</button>
+</form>
+{{ end }}
